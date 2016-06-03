@@ -79,6 +79,8 @@ function formatType(node, getHref) {
     return [t('null')];
   case Syntax.VoidLiteral:
     return [t('void')];
+  case 'StringLiteral': // Does not appear to be exported in doctrine.Syntax
+    return [t(JSON.stringify(node.name))];
   case Syntax.UndefinedLiteral:
     return [link('undefined', getHref)];
   case Syntax.NameExpression:
